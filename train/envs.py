@@ -1,0 +1,11 @@
+
+DATASET_DIR = './dataset'
+BATCH_SIZE = 10
+EPOCHS=1
+DATASET_SIZE = 50
+ID_FROM = 100_000
+ID_TO = 133_332
+IMAGES_PEER_ID = 5
+# IMAGE_SHAPE = (224, 224, 3)
+IMAGE_SHAPE = (112, 112, 3)
+SAVED_MODEL='./saved_module/v1/faceid.keras'

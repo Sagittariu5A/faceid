@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  faceid:
+    image: 'tensorflow/tensorflow:latest'
+    build:
+      context: train
+      dockerfile_inline: 
+        COPY *.py .
+        CMD [ "python3", "faceid.y" ]
