@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  faceid:
+    build:
+      context: predict
+      dockerfile: Dockerfile
+    container_name: faceid_prod
+    environment:
+      - MODEL_NAME=faceid
+    ports:
+      - 8500:8500
+      - 8501:8501
+    init: true

@@ -7,7 +7,7 @@ from envs import *
 
 """Prepare DATASET: Set (anchor, positive), (anchor, negative), and labels 1: positive, 0: negative"""
 def load_dataset() -> tuple[tuple[tuple[list, list]], tuple[tuple[list, list]]]:
-  X_anchor, X_verify, y_dataset: list[int] = [], [], []
+  X_anchor, X_verify, y_dataset = [], [], []
   np.random.seed(int(time.time()))
 
   def get_rand_id() -> int :

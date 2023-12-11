@@ -22,6 +22,9 @@ except:
   pass
 
 finally:
+  #freeze all model layers
+  for layer in model.layers:
+    layer.trainable = False
   # save the model
   model.save(SAVED_MODEL)
-  print('model saved at:', SAVED_MODEL)
+  print('model freezed and saved')

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  faceid:
+    container_name: faceid_cpu
+    volumes:
+      - './dataset:/dataset'
+      - './saved_model:/saved_model'
+    build:
+      context: train
+      dockerfile: Dockerfile
+    init: true
+
