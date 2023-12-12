@@ -114,6 +114,16 @@ bash
 docker compose -f docker-compose.train.yml up --build
 ```
 
+### Train the model on google colab cloud
+
+link to [google colab notebook](https://colab.research.google.com/drive/1f-Eu5u8uThs7q2u4mvG-QOHO7mTdSSns?usp=sharing).
+
+Notes to Consider:
+
+    - use T4 GPU runtime for fast training
+    - use other dataset instead default one
+    - download the saved model for prediction use on deployment/production
+
 ## Making Predictions with TensorFlow Serving
 
 To make predictions using the Siamese model served with TensorFlow Serving, you can send HTTP POST requests to the TensorFlow Serving API endpoint. Follow the steps below:
