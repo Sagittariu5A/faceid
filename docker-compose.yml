@@ -5,9 +5,11 @@ services:
     build:
       context: predict
       dockerfile: Dockerfile
+      args:
+        - SAVED_MODEL_PATH=$SAVED_MODEL_PATH
     container_name: faceid_prod
-    environment:
-      - MODEL_NAME=faceid
+    env_file:
+      - .env
     ports:
       - 8500:8500
       - 8501:8501

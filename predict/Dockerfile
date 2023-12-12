@@ -1,5 +1,7 @@
 FROM tensorflow/serving:latest
 
-WORKDIR /models/faceid/1
+ARG SAVED_MODEL_PATH
+
+WORKDIR /models/$SAVED_MODEL_PATH
 
 COPY saved_model.pb .

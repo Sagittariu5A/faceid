@@ -1,6 +1,5 @@
 import requests
 import json
-import numpy as np
 from matplotlib import pyplot as plt
 
 url = 'http://localhost:8501/v1/models/faceid:predict'

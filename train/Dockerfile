@@ -1,6 +1,8 @@
 FROM tensorflow/tensorflow:latest
 
-WORKDIR /home/faceid
+ARG MODEL_NAME
+
+WORKDIR /home/$MODEL_NAME
 
 COPY . .
 
