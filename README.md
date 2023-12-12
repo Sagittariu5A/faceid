@@ -44,6 +44,7 @@ For custom datset, edit `.env` file DATASET_PATH varible to your train dataset
 **All Steps in [train/faceid.py file](train/faceid.py)**
 
 **1. Load Dataset**
+
 python
 ```
 ((X_a_train, X_v_train), y_train), ((X_a_test, X_v_test), y_test) = load_dataset()
@@ -52,6 +53,7 @@ python
 The dataset is loaded using the load_dataset function, resulting in training and testing data for both audio (X_a_train, X_a_test) and visual inputs (X_v_train, X_v_test), along with corresponding labels (y_train, y_test).
 
 **2. Load Model**
+
 python
 ```
 model = make_model()
@@ -60,6 +62,7 @@ model = make_model()
 The CNN model is created using the make_model function.
 
 **3. Compile Model**
+
 python
 ```
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
@@ -68,6 +71,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 The model is compiled using the Adam optimizer and binary cross-entropy as the loss function. Accuracy is chosen as the metric for evaluation.
 
 **4. Train Model**
+
 python
 ```
 model.fit(x=[X_a_train, X_v_train], y=y_train, batch_size=BATCH_SIZE, epochs=EPOCHS)
@@ -76,6 +80,7 @@ model.fit(x=[X_a_train, X_v_train], y=y_train, batch_size=BATCH_SIZE, epochs=EPO
 The model is trained on the training data (X_a_train, X_v_train, y_train) for a specified number of epochs and with a specified batch size.
 
 **5. Evaluate Model**
+
 python
 ```
 model.evaluate(x=[X_a_test, X_v_test], y=y_test, batch_size=BATCH_SIZE)
@@ -84,6 +89,7 @@ model.evaluate(x=[X_a_test, X_v_test], y=y_test, batch_size=BATCH_SIZE)
 After training, the model is evaluated on the testing data (X_a_test, X_v_test, y_test) using the evaluate function.
 
 **6. Freeze Model Layers**
+
 python
 ```
 for layer in model.layers:
@@ -93,6 +99,7 @@ for layer in model.layers:
 All layers of the trained model are frozen to prevent further training.
 
 **7. Save Model**
+
 python
 ```
 model.save('saved_model.pb')
